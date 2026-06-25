@@ -160,6 +160,33 @@ nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto}
 .tier{display:flex;gap:10px;align-items:center;padding:9px 0;font-size:14px;border-bottom:1px solid var(--line)}
 .tier:last-child{border-bottom:0}
 
+/* takeaways panel */
+.takeaway-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:28px}
+.takeaway-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px 26px;box-shadow:var(--shadow);
+  transition:transform .2s ease,box-shadow .2s ease}
+.takeaway-card:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(16,40,56,.1)}
+.takeaway-card.headline{grid-column:1/-1;background:linear-gradient(135deg,var(--wave) 0%,var(--wave2) 100%);color:#fff;border:none}
+.takeaway-card.headline h3{color:#fff;font-size:22px}
+.takeaway-card.headline p{color:#cfe0e8}
+.takeaway-card.headline p b{color:#fff}
+.takeaway-card.headline .tc-icon{background:rgba(255,255,255,.15);color:var(--shallow)}
+.takeaway-card.headline .tc-label{color:var(--shallow)}
+.tc-icon{width:44px;height:44px;border-radius:12px;background:rgba(30,143,198,.1);color:var(--sky);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.tc-icon.green{background:rgba(95,160,71,.1);color:var(--field)}
+.tc-icon.gold{background:rgba(242,169,44,.12);color:var(--earth)}
+.tc-icon.blue{background:rgba(30,143,198,.1);color:var(--sky)}
+.tc-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.takeaway-card h3{font-family:var(--serif);font-size:18px;font-weight:600;color:var(--wave);margin-bottom:10px;line-height:1.2}
+.takeaway-card p{font-size:14.5px;color:#475a62;line-height:1.55;margin:0}
+.takeaway-card p b{color:var(--ink)}
+.conclusion-box{background:linear-gradient(135deg,rgba(95,160,71,.08),rgba(95,160,71,.03));border:1px solid rgba(95,160,71,.2);
+  border-left:4px solid var(--field);border-radius:16px;padding:28px 30px}
+.conclusion-box .cb-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--field);margin-bottom:10px}
+.conclusion-box h3{font-family:var(--serif);font-size:20px;font-weight:600;color:var(--wave);margin-bottom:12px}
+.conclusion-box p{font-size:15.5px;color:#3a4a52;line-height:1.6;margin:0}
+.conclusion-box p b{color:var(--ink)}
+
 /* footer */
 footer{background:var(--wave);color:#cfe0e8;margin-top:46px}
 footer .wrap{padding:38px 28px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px}
@@ -176,7 +203,8 @@ footer .meta{font-family:var(--mono);font-size:11.5px;color:#8fb3c2;text-align:r
 
 @media(max-width:880px){
   .kpis{grid-template-columns:repeat(2,1fr)} .grid2{grid-template-columns:1fr}
-  .takeaways,.opgrid,.method,.chan-legend{grid-template-columns:1fr}
+  .takeaways,.opgrid,.method,.chan-legend,.takeaway-grid{grid-template-columns:1fr}
+  .takeaway-card.headline{grid-column:1}
   .topbar .tag{display:none} nav.tabs{top:64px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.fill{transition:none!important}}
@@ -257,6 +285,77 @@ footer .meta{font-family:var(--mono);font-size:11.5px;color:#8fb3c2;text-align:r
     <p class="lede" style="margin-top:24px">The <b>blog</b> and <b>direct listing referrals</b> are the workhorses, together more than 3,700 visits. The <b>Signature Experience</b> pages punch above their weight: only about 100 visits, but the highest booking rate of any channel, since the people who reach them are already deep in planning. Paid co-op and newsletter traffic is smaller and earlier-stage.</p>
   </section>
 
+  <!-- TAKEAWAYS -->
+  <section class="panel" id="p-takeaways">
+    <div class="sec-head">
+      <div class="k">Key findings</div>
+      <h2>What the data tells us about OSW's marketing</h2>
+      <p>Nine months of traffic and booking data from Ontario's Southwest member operators.</p>
+    </div>
+
+    <div class="takeaway-grid">
+      <div class="takeaway-card headline">
+        <div class="tc-icon">
+          <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="12"/><path d="M14 8v6l4 2"/></svg>
+        </div>
+        <div class="tc-label">The headline</div>
+        <h3>87% of tracked visits came through OSW's website</h3>
+        <p><b>87% of all tracked visits came through OSW's own web properties</b>: the blog, member listings, and Signature Experience pages. Advertising brought people to these pages, and the pages sent them to member sites. The website is where visitors become bookings.</p>
+      </div>
+
+      <div class="takeaway-card">
+        <div class="tc-icon green">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="tc-label">What's working</div>
+        <h3>Blog + listings = 3,700 visits</h3>
+        <p>The OSW blog and direct listing referrals accounted for <b>75% of all traffic</b> to member sites. Much of the blog traffic came from paid ads. Ads brought visitors to the blog, and the blog sent them to members.</p>
+      </div>
+
+      <div class="takeaway-card">
+        <div class="tc-icon green">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="tc-label">Best conversion rate</div>
+        <h3>Signature Experience pages: small but effective</h3>
+        <p>The Signature Experience pages delivered only ~100 visits but had the <b>highest booking rate of any channel</b>. People who land on these pages are already planning a trip. More of these pages would mean more bookings.</p>
+      </div>
+
+      <div class="takeaway-card">
+        <div class="tc-icon blue">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+        </div>
+        <div class="tc-label">Measured value</div>
+        <h3>$12,400 in bookings</h3>
+        <p>OSW-originated traffic produced <b>66 confirmed bookings</b> worth an estimated <b>$12,400</b>. Homegrown Hideaway and Udderly Ridiculous had full tracking and account for most of this total.</p>
+      </div>
+
+      <div class="takeaway-card">
+        <div class="tc-icon blue">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </div>
+        <div class="tc-label">How it works</div>
+        <h3>Ads bring traffic to OSW; OSW sends it to members</h3>
+        <p>Paid promotion drove visitors to OSW's blog. The blog sent those visitors to member sites. <b>Advertising and content work together</b>: ad spend reaches new audiences, and OSW's website routes them to members who can book them.</p>
+      </div>
+
+      <div class="takeaway-card">
+        <div class="tc-icon gold">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <div class="tc-label">Data gap</div>
+        <h3>We're missing part of the picture</h3>
+        <p>Two members lost visit data to a 90-day retention limit. Three more couldn't be measured at all. The real value OSW delivers is <b>higher than what's captured here</b>. Better tracking would show the full return.</p>
+      </div>
+    </div>
+
+    <div class="conclusion-box">
+      <div class="cb-label">Bottom line</div>
+      <h3>OSW's marketing works. Paid and owned channels support each other.</h3>
+      <p><b>Advertising brings visitors to OSW's website, and the website sends them to members.</b> The blog, listings, and Signature Experience pages turned ad spend into 66 bookings worth $12,400 across the members we could measure. To show the full return, fix the tracking gaps. To get more bookings, expand Signature Experiences.</p>
+    </div>
+  </section>
+
   <!-- METHOD -->
   <section class="panel" id="p-method">
     <div class="sec-head"><div class="k">Methodology &amp; limitations</div><h2>How these numbers were produced</h2>
@@ -316,7 +415,7 @@ document.getElementById('m-excl').innerHTML='<b>Excluded:</b> '+fmt(DATA.exclude
 document.getElementById('m-foot').innerHTML=DATA.footnoteOps.map(o=>'<li><b>'+o.name+'</b> — '+o.reason+'</li>').join('');
 
 /* tabs */
-const TABS=[['overview','Overview'],['operator','By member'],['channel','By channel'],['method','Methodology']];
+const TABS=[['overview','Overview'],['operator','By member'],['channel','By channel'],['takeaways','Takeaways'],['method','Methodology']];
 const tabbar=document.getElementById('tabbar');
 TABS.forEach((t,i)=>{const b=document.createElement('button');b.className='tab'+(i===0?' active':'');
   b.innerHTML='<span class="n">0'+(i+1)+'</span>'+t[1];b.onclick=()=>activate(t[0],b);tabbar.appendChild(b);});
